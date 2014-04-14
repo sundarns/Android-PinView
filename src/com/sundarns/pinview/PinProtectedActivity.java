@@ -1,4 +1,4 @@
-package com.ultimasquare.pinview;
+package com.sundarns.pinview;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ public class PinProtectedActivity extends Activity {
 
 	Button enterPin;
 	Context appContext;
-	
+	private boolean pinEntryShown;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -34,7 +34,17 @@ public class PinProtectedActivity extends Activity {
 		);
 		
 	}
-	
+    @Override
+    public void onResume() {
+        super.onResume();
+        // If the PIN Entry screen is not shown then show this when the app starts or when the app returns from the background
+        if (!pinEntryShown) {
+            Intent intent = new Intent(this, PinEntryView.class);
+            startActivity(intent);
+        }
+        // Set the flag of PIN Entry screen to current state
+        pinEntryShown = !pinEntryShown;         
+    }	
 	
 
 }

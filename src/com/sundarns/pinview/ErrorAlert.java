@@ -1,4 +1,4 @@
-package com.ultimasquare.pinview;
+package com.sundarns.pinview;
 
 import android.app.Activity;
 import android.app.AlertDialog;
