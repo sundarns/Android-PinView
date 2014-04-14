@@ -10,3 +10,4 @@ To Do:
 2. Accept non-numeric PINs
 3. Encrypt the PIN while storing in SharedPreferences
 4. Add customizability to add logo, change color scheme
+
